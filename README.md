@@ -1,5 +1,5 @@
 # CS50-Psets-solutions
-the solutions of psets of course:
+The solutions of psets of course:
 CS50: Introduction to Computer Science - Harvard University - 2018
 
 https://www.edx.org/course/cs50s-introduction-computer-science-harvardx-cs50x
