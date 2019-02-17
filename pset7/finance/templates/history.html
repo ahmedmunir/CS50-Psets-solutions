@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <table class = "table">
+        <thead>
+            <tr>
+                <td scope="col">operation state</td>
+                <td scope="col">Symbol</td>
+                <td scope="col">Number of shares</td>
+                <td scope="col">Price</td>
+                <td scope="col">Date</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(user_history|length) %}
+                <tr>
+                    <td>{{ user_history[i]['state'] }}</td>
+                    <td>{{ user_history[i]['symbol'] }}</td>
+                    <td>{{ user_history[i]['number_of_shares'] }}</td>
+                    <td>{{ user_history[i]['price'] }}</td>
+                    <td>{{ user_history[i]['date'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

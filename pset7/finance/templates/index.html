@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th class="col">Symbol</td>
+                <th class="col">Shares</td>
+                <th class="col">Price</td>
+                <th class="col">Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(user_pocket|length) %}
+                <tr>
+                    <td>{{ user_pocket[i]['symbol'] }}</td>
+                    <td>{{ user_pocket[i]['number_of_shares'] }}</td>
+                    <td>{{ user_pocket[i]['price']|usd }}</td>
+                    <td>{{ user_pocket[i]['Total']|usd }}</td>
+                </tr>
+            {% endfor %}
+                <tr>
+                    <th>Cash</td>
+                    <td colspan = "2"></td>
+                    <td>{{ user_cash[0]['cash']|usd }}</td>
+                </tr>
+                <tr>
+                    <td colspan = "3"></td>
+                    <th>{{ total_stocks_value|usd }}</td>
+                </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
